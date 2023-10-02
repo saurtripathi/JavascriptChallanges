@@ -2,19 +2,17 @@ import React from 'react'
 
 export default function Solution() {
 
+    // input: "The KITTENS are SLEEPING!"
+    // output: "shh... the kittens are sleeping"
 
-
-    const panic = text => text.split(' ').join(' 😱 ') + '!'
-
-
-
-
+    const whisper = text => {
+        text = text.endsWith('!') ? text.slice(0, text.length - 1).toLowerCase() : text.toLowerCase()
+        return 'sh...'.concat(text)
+    }
 
     return (
         <h5>
-            {panic("I'm out of coffee")}
-            <br/>
-            {panic("bravo")}
+            {whisper("MA'AM, this is a Wendy's!")}
         </h5>
     )
 }
