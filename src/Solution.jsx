@@ -10,12 +10,12 @@ export default function Solution() {
 
         let textModified = text.includes(' ') ?
 
-            text.split(' ').map((token, index) => lenthOfSplitArray - 1 !== index ? `${token.toUpperCase()} 😱` : `${token.toUpperCase()} !`)
+            text.split(' ').map((token, index) => lenthOfSplitArray - 1 !== index ? `${token.toUpperCase()} 😱` : `${token.toUpperCase()}!`)
             :
 
             `${text.toUpperCase()}!`
 
-        return textModified
+        return lenthOfSplitArray > 1 ? textModified.join(' ') : textModified
     }
 
 
