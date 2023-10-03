@@ -18,8 +18,7 @@ function App() {
     const slicedWord = word.startsWith(':') &&
       word.endsWith(':') ?
       word
-        .slice(1)
-        .slice(0, - 1)
+        .slice(1,-1)
       : word
     return emojis[slicedWord] ? emojis[slicedWord] : slicedWord
   }
