@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function Solution({ notAfizzBuzz, employeeIdArray }) {
-    // console.log(employeeIdArray)
+export default function Solution({ emojifyWord, emojifySentence }) {
+    console.log(emojifyWord(':smile:'))
     return (
         <h5>
-            {employeeIdArray.map(id => notAfizzBuzz(id))}
+            {emojifySentence("I :heart: my :cat:")}
         </h5>
     )
 }
