@@ -6,17 +6,22 @@ import Challange from './Challange'
 import Solution from './Solution'
 function App() {
 
+  const notAfizzBuzz = id =>
+
+    id % 3 === 0 && id % 5 === 0 ? 'JACKPOT! 1 Million and a Yacht!' :
+      id % 3 === 0 ? 'Vacation!' :
+        id % 5 === 0 ? '$100,000 bonus!' :
+          id % 3 !== 0 || id % 5 !== 0 ? ':( ' : ''
+
+  const employeeIdArray = Array.from({ length: 100 }, (e, i) => i + 1)
 
 
-  const [count, setCount] = useState(0)
-  const capitalizeWord = word => word.slice(0, 1).toUpperCase().concat(word.slice(1))
-  const toTitleCase = text => text.split(' ').map(word => capitalizeWord(word)).join(' ')
 
   return (
     <>
       <Challange />
       <div className="card">
-        <Solution capitalizeWord={capitalizeWord} toTitleCase={toTitleCase} />
+        <Solution notAfizzBuzz={notAfizzBuzz} employeeIdArray={employeeIdArray} />
       </div>
     </>
   )

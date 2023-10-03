@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function Solution({ capitalizeWord, toTitleCase }) {
-
+export default function Solution({ notAfizzBuzz, employeeIdArray }) {
+    // console.log(employeeIdArray)
     return (
         <h5>
-            {toTitleCase("everything, everywhere, all at once")}
+            {employeeIdArray.map(id => notAfizzBuzz(id))}
         </h5>
     )
 }
