@@ -1,10 +1,12 @@
 import React from 'react'
 
-export default function Solution({ emojifyWord, emojifySentence }) {
-    console.log(emojifyWord(':smile:'))
+export default function Solution({ isAnagram }) {
+    console.log(isAnagram("allergy", "gallery"))
+    // console.log(isAnagram("rainbow", "crossbow"))
     return (
         <h5>
-            {emojifySentence("I :heart: my :cat:")}
+            {''+isAnagram("allergy", "gallery")}
+            {/* {''+isAnagram("rainbow", "crossbow")} */}
         </h5>
     )
 }

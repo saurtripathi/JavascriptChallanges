@@ -6,31 +6,25 @@ import Challange from './Challange'
 import Solution from './Solution'
 function App() {
 
-  const emojis = {
-    "smile": "😊",
-    "angry": "😠",
-    "party": "🎉",
-    "heart": "💜",
-    "cat": "🐱",
-    "dog": "🐕"
-  }
-  const emojifyWord = word => {
-    const slicedWord = word.startsWith(':') &&
-      word.endsWith(':') ?
-      word
-        .slice(1,-1)
-      : word
-    return emojis[slicedWord] ? emojis[slicedWord] : slicedWord
-  }
 
-  const emojifySentence = text => text.split(' ').map(word => emojifyWord(word)).join(' ')
+  // const isAnagram = (word, anotherWord) => {
+  //   return word.length === anotherWord.length &&
+  //     [...word].sort().every(function (element, index) {
+  //       return element === [...anotherWord].sort()[index];
+  //     });
+  // }
+
+  const isAnagram = (word, anotherWord) =>
+    word.length === anotherWord.length &&
+    word.split('').sort().join() === anotherWord.split('').sort().join()
+
 
 
   return (
     <>
       <Challange />
       <div className="card">
-        <Solution emojifyWord={emojifyWord} emojifySentence={emojifySentence} />
+        <Solution isAnagram={isAnagram} />
       </div>
     </>
   )
