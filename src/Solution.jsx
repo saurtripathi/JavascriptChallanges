@@ -1,13 +1,10 @@
 import React from 'react'
 
-export default function Solution() {
+export default function Solution({ capitalizeWord, toTitleCase }) {
 
-    // "I'm so happy it's Monday" Example output: "I'M So hApPy iT'S MoNdAy"
-
-    const altCaps = text => text.split('').map((token, index) => index % 2 === 0 ? token.toUpperCase() : token).join('')
     return (
         <h5>
-            {altCaps("I'm so happy it's Monday")}
+            {toTitleCase("everything, everywhere, all at once")}
         </h5>
     )
 }

@@ -2,14 +2,16 @@ import React from 'react'
 
 export default function Challange() {
 
+   const s1 =  `
+                Write a function that will capitalize every word in a sentence. \n
+                Example Input: "everything, everywhere, all at once" \n
+                Example Output: "Everything, Everywhere, All At Once"
+    `
+
+
     return (
         <h3 style={{ textAlign: 'left', color: 'maroon' }}>
-            Write a function that takes in a string of letters
-            and returns a sentence in which every other letter is capitalized.
-
-            Example input: "I'm so happy it's Monday"
-            Example output: "I'M So hApPy iT'S MoNdAy"
-
+            {s1}
         </h3>
     )
 }
