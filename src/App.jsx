@@ -6,13 +6,23 @@ import Challange from './Challange'
 import Solution from './Solution'
 function App() {
 
-  const isPalindrome = (str) => (str.split('').reverse().join('') === str)
-  const word = 'madam'
+  const pwd = '9338dsabbbadjdjdj2sdfdfdf282ff8fdsd888ss8cfgfg332q23'
+  // const removeDuplicate = pwd => [...new Set([...pwd])].join('')
+  //938dsabj2fcgq
+
+  const removeDuplicate = str => str.split('').reduce((acc, curr) => {
+    if( !acc.includes(curr)){
+      acc.push(curr)
+    }
+    return acc
+  },[])
+
+
   return (
     <>
       <Challange />
       <div className="card">
-        <Solution isPalindrome={isPalindrome} word={word} />
+        <Solution removeDuplicate={removeDuplicate} pwd={pwd} />
       </div>
     </>
   )
