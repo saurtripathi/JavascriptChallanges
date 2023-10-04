@@ -2,31 +2,46 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+// import { underscore } from 'underscore'
 import Challange from './Challange'
 import Solution from './Solution'
 function App() {
 
-  const input = "Peggy Porth"
-  // const output = { p: 2, e: 1, g: 2, y: 1, o: 1, r: 1, t: 1, h: 1 }
+  const kittyScores = [
+    [39, 99, 76], 89, 98, [87, 56, 90],
+    [96, 95], 40, 78, 50, [63]
+  ];
 
-  const countFrequencyOfLetters = text => {
-    const containerLetterFrequency = {}
-    text.toLowerCase().split(' ').join('').split('').forEach(letter =>  {
-      if (!containerLetterFrequency[letter]) {
-        containerLetterFrequency[letter] = 1  
+  const kittyPrizes = [
+    ["💰", "🐟", "🐟"], "🏆", "💐", "💵", ["💵", "🏆"],
+    ["🐟", "💐", "💐"], "💵", "💵", ["🐟"], "🐟"
+  ];
+
+
+
+  // const flatten = arr => arr.flat( Infinity )
+
+
+  // const flatten = arr => arr.reduce((acc, curr) => curr.length > 1 ? acc[ ...curr ] : curr, [])
+
+  const flatten = arr => {
+    const newArr = []
+    arr.forEach(item => {
+      // console.log(Array.isArray(item))
+      if (Array.isArray(item)) {
+        newArr.push.apply(newArr, item);
       } else {
-        containerLetterFrequency[letter] = containerLetterFrequency[letter] + 1
+        newArr.push(item)
       }
-      return containerLetterFrequency
     })
-    return containerLetterFrequency;
+    return newArr
   }
-
+console.log(flatten(kittyScores))
   return (
     <>
       <Challange />
       <div className="card">
-        <Solution countFrequencyOfLetters={countFrequencyOfLetters} input={input} />
+        <Solution kittyScores={kittyScores} kittyPrizes={kittyPrizes} flatten={flatten} />
       </div>
     </>
   )

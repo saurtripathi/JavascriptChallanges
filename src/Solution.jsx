@@ -1,15 +1,12 @@
 import React from 'react'
 
-export default function Solution({ input, countFrequencyOfLetters }) {
+export default function Solution({ kittyScores, kittyPrizes, flatten }) {
 
-
-    const y = countFrequencyOfLetters(input)
-    console.log(y)
-    const x = Object.keys(y).map(key => <p key={key}><span>{key} : </span><span>{y[key]}</span></p>)
 
     return (
         <h5>
-            {x}
+            <p>{flatten(kittyPrizes)}</p>
+            <p>{flatten(kittyScores)}</p>
         </h5>
     )
 }

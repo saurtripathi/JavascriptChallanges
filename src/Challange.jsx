@@ -2,22 +2,28 @@ import React from 'react'
 
 export default function Challange() {
 
-    const ch = `How often do the letters in your name repeat? 
+    const ch = `
+    Scrimba mascot Pumpkin has won the grand prize at an international 
+cat show. Below are Pumpkin's scores from the judges, as well as all the 
+prizes he's won. In all the excitement of victory,
+they've become a jumbled mess of nested arrays. Let's 
+help Pumpkin by sorting it out. 
 
-    Write a function that counts how many times each letter of your name
-    occurs. Your function should take in your first and last name and return
-    an object where the keys are each character in your name, and the value
-    is how many times that character appears in your name. 
-    
-    Example input: "Peggy Porth"
-    Example output: {p: 2, e: 1, g: 2, y: 1, o: 1, r: 1, t: 1, h: 1}
-    
-    Your function should NOT count spaces and should not be case sensitive (a
-    lowercase t and a capital T should be considered the same character).`
+Write a function to flatten nested arrays of strings or
+numbers into a single array. There's a method
+for this, but pratice both doing it manually and using the method. 
+    `
+
+    const input = [1, [4, 5], [4, 7, 6, 4], 3, 5]
+    const output = [1, 4, 5, 4, 7, 6, 4, 3, 5]
 
     return (
         <h3 style={{ textAlign: 'left', color: 'maroon' }}>
             {ch}
+
+            <p>Input : [1, [4, 5], [4, 7, 6, 4], 3, 5]</p>
+          
+            <p>Output : [1, 4, 5, 4, 7, 6, 4, 3, 5]</p>
         </h3>
     )
 }
