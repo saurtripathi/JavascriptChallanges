@@ -6,23 +6,27 @@ import Challange from './Challange'
 import Solution from './Solution'
 function App() {
 
-  const pwd = '9338dsabbbadjdjdj2sdfdfdf282ff8fdsd888ss8cfgfg332q23'
-  // const removeDuplicate = pwd => [...new Set([...pwd])].join('')
-  //938dsabj2fcgq
+  const input = "Peggy Porth"
+  // const output = { p: 2, e: 1, g: 2, y: 1, o: 1, r: 1, t: 1, h: 1 }
 
-  const removeDuplicate = str => str.split('').reduce((acc, curr) => {
-    if( !acc.includes(curr)){
-      acc.push(curr)
-    }
-    return acc
-  },[])
-
+  const countFrequencyOfLetters = text => {
+    const containerLetterFrequency = {}
+    text.toLowerCase().split(' ').join('').split('').forEach(letter =>  {
+      if (!containerLetterFrequency[letter]) {
+        containerLetterFrequency[letter] = 1  
+      } else {
+        containerLetterFrequency[letter] = containerLetterFrequency[letter] + 1
+      }
+      return containerLetterFrequency
+    })
+    return containerLetterFrequency;
+  }
 
   return (
     <>
       <Challange />
       <div className="card">
-        <Solution removeDuplicate={removeDuplicate} pwd={pwd} />
+        <Solution countFrequencyOfLetters={countFrequencyOfLetters} input={input} />
       </div>
     </>
   )

@@ -2,17 +2,18 @@ import React from 'react'
 
 export default function Challange() {
 
-    const ch = `Grandpa's hand isn't as steady as it used to be. You finally convinced him
-    to start using a password manager, but he accidentally typed and saved his
-    password with a bunch of extra characters. Help him recover his password by 
-    removing all the duplicate characters. 
+    const ch = `How often do the letters in your name repeat? 
+
+    Write a function that counts how many times each letter of your name
+    occurs. Your function should take in your first and last name and return
+    an object where the keys are each character in your name, and the value
+    is how many times that character appears in your name. 
     
-    Your function should take in a string of characters and return a
-    string with the duplicate characters removed. Assume that your input
-    is lowercased with only letters and numbers.  
+    Example input: "Peggy Porth"
+    Example output: {p: 2, e: 1, g: 2, y: 1, o: 1, r: 1, t: 1, h: 1}
     
-    Example input: "aabbccb1212"
-    Example output: "abc12"`
+    Your function should NOT count spaces and should not be case sensitive (a
+    lowercase t and a capital T should be considered the same character).`
 
     return (
         <h3 style={{ textAlign: 'left', color: 'maroon' }}>

@@ -1,13 +1,15 @@
 import React from 'react'
 
-export default function Solution({ pwd, removeDuplicate }) {
-    console.log(pwd, removeDuplicate)
-    // console.log(isAnagram("rainbow", "crossbow"))
-    console.log(removeDuplicate(pwd).join(''))
+export default function Solution({ input, countFrequencyOfLetters }) {
+
+
+    const y = countFrequencyOfLetters(input)
+    console.log(y)
+    const x = Object.keys(y).map(key => <p key={key}><span>{key} : </span><span>{y[key]}</span></p>)
 
     return (
         <h5>
-            {removeDuplicate(pwd).join('')}
+            {x}
         </h5>
     )
 }
