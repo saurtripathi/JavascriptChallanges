@@ -1,15 +1,13 @@
 import React from 'react'
 
-export default function Solution({ messages, reverseManually, reversedString, word }) {
-    console.log(messages, reverseManually, reversedString, word)
+export default function Solution({ word, isPalindrome }) {
+    console.log(word, isPalindrome)
     // console.log(isAnagram("rainbow", "crossbow"))
 
-    const reversedMessages = messages.map(message => <p>{reversedString(message)}</p>)
+
     return (
         <h5>
-            {/* {reversedString(word)} */}
-            {/* {reverseManually(word)} */}
-            {reversedMessages}
+            {'' + isPalindrome(word)}
         </h5>
     )
 }
