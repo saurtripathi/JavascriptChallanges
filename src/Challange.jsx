@@ -2,26 +2,42 @@ import React from 'react'
 
 export default function Challange() {
 
-    const ana = `
-   Anagrams are groups of words that can be spelled with the same letters. 
-For example, the letters in "pea" can be rearrange to spell "ape", and 
-the letters in "allergy" can be rearranged to spell "gallery."
-
-Write a function to check if two strings of lowercase letters are anagrams. 
-Return true if the word is an anagram. Return false if it isn't. 
-
-Example input: "allergy", "gallery"
-Example output: true
-
-Example input: "rainbow", "crossbow"
-Example output: false
-   `
+    const des1 = `We've received what (we assume) is a message of peace and brotherhood from 
+    an alien planet. They almost got it right, but the messages are 
+    backward. Write functions to reverse the backward messages so we can 
+    read what they have to say! `
+     
+    
+    const title = ":htraE no od ot ffutS";
+    const messages = [
+                "maerc eci yrT",
+                "rewoT leffiE tisiV",
+                "noom eht ot snamuh etacoleR",
+                "egrahc ni stac tuP", 
+            ]
+    const messageElements = messages.map(message => <p>${message}</p>)
+    const hint = ` Step 1: Reverse a string
+    Write a function that takes in a string and returns the reverse 
+    of that string. An interviewer may want to check if you know your
+    string methods, or may want to know if you can reverse a string manually. 
+    Practice both ways! 
+    
+    Example input: !htrae ot emocleW
+    Example output: Welcome to earth!`
 
 
 
     return (
         <h3 style={{ textAlign: 'left', color: 'maroon' }}>
-            {ana}
+            {des1}
+            <br/>
+            {`title : ${title}`}
+            <br/>
+            {`messages :`}
+            {messageElements}
+            <br/>
+            {hint}
+
         </h3>
     )
 }

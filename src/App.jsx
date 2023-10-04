@@ -6,17 +6,28 @@ import Challange from './Challange'
 import Solution from './Solution'
 function App() {
 
+  const messages = [
+    "maerc eci yrT",
+    "rewoT leffiE tisiV",
+    "noom eht ot snamuh etacoleR",
+    "egrahc ni stac tuP",
+  ]
 
-  // const isAnagram = (word, anotherWord) => {
-  //   return word.length === anotherWord.length &&
-  //     [...word].sort().every(function (element, index) {
-  //       return element === [...anotherWord].sort()[index];
-  //     });
-  // }
 
-  const isAnagram = (word, anotherWord) =>
-    word.length === anotherWord.length &&
-    word.split('').sort().join() === anotherWord.split('').sort().join()
+  // const reversedString = str => str.split("").reduce((acc, char) => char + acc, "")
+
+  // const reversedString = str => str.split("").reverse().join("")
+
+  const reversedString = str => [...str].reverse().join("")
+
+  function reverseManually(str) {
+    let reversedString = ''
+    for (let i = str.length - 1; i >= 0; i--) {
+      reversedString += str[i]
+    }
+    return reversedString
+  }
+
 
 
 
@@ -24,7 +35,7 @@ function App() {
     <>
       <Challange />
       <div className="card">
-        <Solution isAnagram={isAnagram} />
+        <Solution messages={messages} reverseManually={reverseManually} reversedString={reversedString} word="maerc eci yrT" />
       </div>
     </>
   )
