@@ -1,21 +1,15 @@
 import React from 'react'
 
-export default function Solution({ activity, arg, getOptimumObject }) {
+export default function Solution({ d, getFormattedData }) {
 
-    let a = null
-    let b = 0
-    const obj = getOptimumObject(arg)
-    Object.keys(obj).forEach(key => {
-        a = key
-        b = obj[key]
-    }
-    )
-    console.log(a, b,activity)
+    const elm = getFormattedData(d).map(input =>
+        <p key={input['fullName']}>
+            <p>{input['fullName']} </p>
+            <p>{input['birthday']}</p>
+        </p>)
     return (
         <h5>
-            <p>Maximum liked {activity} : {a} </p>
-            <p>Votes recieved by maximum liked {activity} : {b} </p>
-
+            {elm}
         </h5>
     )
 }

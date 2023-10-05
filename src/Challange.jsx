@@ -3,26 +3,30 @@ import React from 'react'
 export default function Challange() {
 
     const ch = `
-It's the weekend and you and your friends can't agree on 
-what to order for dinner, so you put it to a vote. 
-
-Write a function to find the food with the highest number of votes. 
-
-Your function should take in a food object and find the food
-with the most votes. It should log the winner, along with 
-how many votes it received.  
-`
-    const inp = `Example input: {"🐈 cats": 19, "🐕 dogs": 17}`
-    const out = `Example output: The winner is 🐈 cats with 19 votes!`
+    Good news, renown advertising firm Evil Corp. wants to purchase our 
+    private user data! 
+    
+    We'd never do this in real life of course, but just for practice 
+    let's pretend we're unethical web hackers and transform the data 
+    in the way Evil Corp. has requested. They're quite particular and
+    just want an array of users with a fullname and human readable
+    birthday.   
+    
+    Write a function that maps through the current data and returns
+    a new an array of objects with only two properties: 
+    fullName and birthday. Each result in your 
+    array should look like this when you're done: 
+    
+    {
+        fullName: "Levent Busser", 
+        birthday: "Fri Aug 20 1971"
+    }
+    
+    Read about toDateString() for info on formatting a readable date. 
+    `
     return (
         <h3 style={{ textAlign: 'left', color: 'maroon' }}>
             {ch}
-
-            <p>
-                {inp}
-            </p>
-
-            <p>{out}</p>
         </h3>
     )
 }
