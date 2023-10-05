@@ -6,22 +6,23 @@ import data from '../data'
 
 function App() {
 
-  const getFormattedData = inputs => inputs.map(input => {
+  console.log(data)
+
+  const newData = inputs => inputs.filter(input => input['paid'] === false).map(input => {
     return {
-      'fullName': `${input.name.first} ${input.name.last} `,
-      'birthday': new Date(input.dob.date).toDateString()
+      title: input['title'],
+      rating: input['rating'],
+      paid: input['paid']
     }
   })
 
-
-
-
+  console.log(newData(data))
 
   return (
     <>
       <Challange />
       <div className="card">
-        <Solution getFormattedData={getFormattedData} d={data} />
+        <Solution newData={newData} data={data} />
       </div>
     </>
   )

@@ -3,30 +3,27 @@ import React from 'react'
 export default function Challange() {
 
     const ch = `
-    Good news, renown advertising firm Evil Corp. wants to purchase our 
-    private user data! 
+    We have a list of podcasts and need the ability to filter by only
+    podcasts which are free.
     
-    We'd never do this in real life of course, but just for practice 
-    let's pretend we're unethical web hackers and transform the data 
-    in the way Evil Corp. has requested. They're quite particular and
-    just want an array of users with a fullname and human readable
-    birthday.   
+    Write a function that takes in the podcast data and returns an new
+    array of only those podcasts which are free.
     
-    Write a function that maps through the current data and returns
-    a new an array of objects with only two properties: 
-    fullName and birthday. Each result in your 
-    array should look like this when you're done: 
-    
-    {
-        fullName: "Levent Busser", 
-        birthday: "Fri Aug 20 1971"
-    }
-    
-    Read about toDateString() for info on formatting a readable date. 
+    Additionally, your new array should return only 
+    objects containing only the podcast title, rating, and whether or 
+    not it is paid. 
     `
+    const output =
+        [
+            { title: "Scrimba Podcast", rating: 10, paid: false },
+            { title: "Something about Witches", rating: 8, paid: false },
+            { title: "Coding Corner", rating: 9, paid: false }
+        ]
     return (
         <h3 style={{ textAlign: 'left', color: 'maroon' }}>
             {ch}
+            <br />
+
         </h3>
     )
 }
