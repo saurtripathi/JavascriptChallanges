@@ -5,43 +5,39 @@ import './App.css'
 // import { underscore } from 'underscore'
 import Challange from './Challange'
 import Solution from './Solution'
+import { keys } from 'underscore'
 function App() {
 
-  const kittyScores = [
-    [39, 99, 76], 89, 98, [87, 56, 90],
-    [96, 95], 40, 78, 50, [63]
-  ];
+  const gameNightFood1 = {
+    "🍕 pizza": 3,
+    "🌮 tacos": 10,
+    "🥗 salads": 7,
+    "🍝 pasta": 5
+  }
 
-  const kittyPrizes = [
-    ["💰", "🐟", "🐟"], "🏆", "💐", "💵", ["💵", "🏆"],
-    ["🐟", "💐", "💐"], "💵", "💵", ["🐟"], "🐟"
-  ];
+  const pets = { "🐈 cats": 19, "🐕 dogs": 17 }
+  const activity = 'pet'
+  const getOptimumObject = obj => {
 
-
-
-  // const flatten = arr => arr.flat( Infinity )
-
-
-  // const flatten = arr => arr.reduce((acc, curr) => curr.length > 1 ? acc[ ...curr ] : curr, [])
-
-  const flatten = arr => {
-    const newArr = []
-    arr.forEach(item => {
-      // console.log(Array.isArray(item))
-      if (Array.isArray(item)) {
-        newArr.push.apply(newArr, item);
-      } else {
-        newArr.push(item)
+    let maxKey = null
+    let maxValue = 0
+    let maxObject = {}
+    Object.keys(obj).forEach(key => {
+      if (obj[key] > maxValue) {
+        maxValue = obj[key]
+        maxKey = key
       }
     })
-    return newArr
+    maxObject[maxKey] = maxValue
+    return maxObject
   }
-console.log(flatten(kittyScores))
+  // console.log(getOptimumObject(gameNightFood2))
+
   return (
     <>
       <Challange />
       <div className="card">
-        <Solution kittyScores={kittyScores} kittyPrizes={kittyPrizes} flatten={flatten} />
+        <Solution getOptimumObject={getOptimumObject} arg={pets} activity={activity} />
       </div>
     </>
   )

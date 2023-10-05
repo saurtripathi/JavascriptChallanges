@@ -3,27 +3,26 @@ import React from 'react'
 export default function Challange() {
 
     const ch = `
-    Scrimba mascot Pumpkin has won the grand prize at an international 
-cat show. Below are Pumpkin's scores from the judges, as well as all the 
-prizes he's won. In all the excitement of victory,
-they've become a jumbled mess of nested arrays. Let's 
-help Pumpkin by sorting it out. 
+It's the weekend and you and your friends can't agree on 
+what to order for dinner, so you put it to a vote. 
 
-Write a function to flatten nested arrays of strings or
-numbers into a single array. There's a method
-for this, but pratice both doing it manually and using the method. 
-    `
+Write a function to find the food with the highest number of votes. 
 
-    const input = [1, [4, 5], [4, 7, 6, 4], 3, 5]
-    const output = [1, 4, 5, 4, 7, 6, 4, 3, 5]
-
+Your function should take in a food object and find the food
+with the most votes. It should log the winner, along with 
+how many votes it received.  
+`
+    const inp = `Example input: {"🐈 cats": 19, "🐕 dogs": 17}`
+    const out = `Example output: The winner is 🐈 cats with 19 votes!`
     return (
         <h3 style={{ textAlign: 'left', color: 'maroon' }}>
             {ch}
 
-            <p>Input : [1, [4, 5], [4, 7, 6, 4], 3, 5]</p>
-          
-            <p>Output : [1, 4, 5, 4, 7, 6, 4, 3, 5]</p>
+            <p>
+                {inp}
+            </p>
+
+            <p>{out}</p>
         </h3>
     )
 }
