@@ -14,7 +14,7 @@ function App() {
 
   function totalSavory(arr) {
     // console.log(arr)
-    return arr.reduce((acc, curr) => curr.type === 'savory' ? acc + curr.price : 0, 0).toFixed(2)
+    return arr.reduce((acc, curr) => curr.type === 'savory' ? acc + curr.price : acc, 0).toFixed(2)
   }
   console.log(totalSavory(data))
 
