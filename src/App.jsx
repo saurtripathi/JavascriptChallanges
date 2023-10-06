@@ -6,18 +6,24 @@ import data from '../data'
 
 function App() {
 
-  function total(arr) {
-    return arr.reduce((acc, curr) => acc + curr.price, 0).toFixed(2)
+  function callback(acc, curr) {
+    if (curr.type === 'savory') {
+      acc + curr
+    }
   }
 
-  console.log(total(data))
+  function totalSavory(arr) {
+    // console.log(arr)
+    return arr.reduce((acc, curr) => curr.type === 'savory' ? acc + curr.price : 0, 0).toFixed(2)
+  }
+  console.log(totalSavory(data))
 
 
   return (
     <>
       <Challange />
       <div >
-        <Solution total={total} data={data} />
+        <Solution total={totalSavory} data={data} />
       </div>
     </>
   )
