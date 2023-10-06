@@ -6,25 +6,18 @@ import data from '../data'
 
 function App() {
 
-  // console.log(data)
+  function total(arr) {
+    return arr.reduce((acc, curr) => acc + curr.price, 0).toFixed(2)
+  }
 
-  const shoppingCart = data
-    .filter(dish => dish.type === 'sweet')
-    .map(dish => {
-      return {
-        item: dish.item,
-        price: dish.price
-      }
-    })
-
-  console.log(shoppingCart)
+  console.log(total(data))
 
 
   return (
     <>
       <Challange />
-      <div className="card">
-        <Solution shoppingCart={shoppingCart} />
+      <div >
+        <Solution total={total} data={data} />
       </div>
     </>
   )

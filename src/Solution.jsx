@@ -1,16 +1,11 @@
 import React from 'react'
 
-export default function Solution({ shoppingCart }) {
+export default function Solution({data,total}) {
 
-    const shoppingCartItems = shoppingCart.map(prod =>
-        <p>
-            <span>{prod.item} : </span>
-            <span>{prod.price}</span>
-        </p>
-    )
+const totalPrice = total(data)
     return (
         <h5>
-            {shoppingCartItems}
+            Output : {totalPrice}
         </h5>
     )
 }
