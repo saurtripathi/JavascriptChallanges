@@ -1,19 +1,12 @@
 import React from 'react'
 
-export default function Solution({ data, sortProducts }) {
+export default function Solution({ data, getUniqueTags }) {
 
-    const totalPrice = sortProducts(data).map(prd =>
-        <p>
-            <span>
-                {prd.product}
-            </span>
-            <span>
-                {prd.price}
-            </span>
-        </p>)
+    const uniqueTags = getUniqueTags(data)
+    const uniqueTagElements = uniqueTags.map(tag => <p>{tag}</p>)
     return (
         <h5>
-            Output : {totalPrice}
+            {uniqueTagElements}
         </h5>
     )
 }

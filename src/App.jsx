@@ -6,16 +6,33 @@ import data from '../data'
 
 function App() {
 
-  const sortProducts = products =>
-    products.sort((item1, item2) => item1.price - item2.price)
+  // function getUniqueTags(data) {
+  //   const tags = data.reduce((acc, curr) => {
+  //     return [...acc, ...curr.tags]
+  //   }, [])
+  //   return [... new Set(tags)]
+  // }
 
-  // sortProducts(data)
+  function getUniqueTags(data) {
+
+    const uniqueTags = {}
+    const tags = data.map(curr => curr.tags).flat()
+    tags.forEach(tag => {
+      if (!uniqueTags[tag]) {
+        // uniqueTags= { ...uniqueTags, [tag]: true }
+        uniqueTags[tag]=true
+      }
+    })
+    return Object.keys(uniqueTags)
+  }
+
+  console.log(getUniqueTags(data))
 
   return (
     <>
       <Challange />
       <div >
-        <Solution sortProducts={sortProducts} data={data} />
+        <Solution getUniqueTags={getUniqueTags} data={data} />
       </div>
     </>
   )
