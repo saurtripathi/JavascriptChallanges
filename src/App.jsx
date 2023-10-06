@@ -6,24 +6,16 @@ import data from '../data'
 
 function App() {
 
-  function callback(acc, curr) {
-    if (curr.type === 'savory') {
-      acc + curr
-    }
-  }
+  const sortProducts = products =>
+    products.sort((item1, item2) => item1.price - item2.price)
 
-  function totalSavory(arr) {
-    // console.log(arr)
-    return arr.reduce((acc, curr) => curr.type === 'savory' ? acc + curr.price : acc, 0).toFixed(2)
-  }
-  console.log(totalSavory(data))
-
+  // sortProducts(data)
 
   return (
     <>
       <Challange />
       <div >
-        <Solution total={totalSavory} data={data} />
+        <Solution sortProducts={sortProducts} data={data} />
       </div>
     </>
   )
