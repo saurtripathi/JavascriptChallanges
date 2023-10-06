@@ -1,29 +1,16 @@
 import React from 'react'
 
-export default function Solution({ data, newData }) {
+export default function Solution({ shoppingCart }) {
 
-    console.log(newData(data))
-
-    const elm = newData(data).map(input =>
-        <div>
-            <div>
-                <span>title : </span>
-                <span>{input.title}</span>
-            </div>
-            <div>
-                <span>rating    : </span>
-                <span>{input.rating}</span>
-            </div>
-            <div>
-                <span>paid  : </span>
-                <span>{`${input.paid}`}</span>
-            </div>
-        </div>
+    const shoppingCartItems = shoppingCart.map(prod =>
+        <p>
+            <span>{prod.item} : </span>
+            <span>{prod.price}</span>
+        </p>
     )
-    // console.log(elm)
     return (
         <h5>
-            {elm}
+            {shoppingCartItems}
         </h5>
     )
 }

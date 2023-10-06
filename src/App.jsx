@@ -6,23 +6,25 @@ import data from '../data'
 
 function App() {
 
-  console.log(data)
+  // console.log(data)
 
-  const newData = inputs => inputs.filter(input => input['paid'] === false).map(input => {
-    return {
-      title: input['title'],
-      rating: input['rating'],
-      paid: input['paid']
-    }
-  })
+  const shoppingCart = data
+    .filter(dish => dish.type === 'sweet')
+    .map(dish => {
+      return {
+        item: dish.item,
+        price: dish.price
+      }
+    })
 
-  console.log(newData(data))
+  console.log(shoppingCart)
+
 
   return (
     <>
       <Challange />
       <div className="card">
-        <Solution newData={newData} data={data} />
+        <Solution shoppingCart={shoppingCart} />
       </div>
     </>
   )

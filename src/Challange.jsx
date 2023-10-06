@@ -1,28 +1,32 @@
-import React from 'react'
+import React, { createElement } from 'react'
 
 export default function Challange() {
 
     const ch = `
-    We have a list of podcasts and need the ability to filter by only
-    podcasts which are free.
+    It's the day after Halloween 🎃 and all the candy is on sale!
+   
+    To buy up all the candy, use map() and filter() to put all the
+    candy into a "shoppingCart" array. 
     
-    Write a function that takes in the podcast data and returns an new
-    array of only those podcasts which are free.
-    
-    Additionally, your new array should return only 
-    objects containing only the podcast title, rating, and whether or 
-    not it is paid. 
+    The new array should contain only the item and the price, like
+    this: 
+
     `
     const output =
         [
-            { title: "Scrimba Podcast", rating: 10, paid: false },
-            { title: "Something about Witches", rating: 8, paid: false },
-            { title: "Coding Corner", rating: 9, paid: false }
+            { item: "🍭", price: 2.99 },
+            { item: "🍫", price: 1.99 },
+            { item: "🍬", price: 0.89 }
         ]
+
+        const outputElm = output.map(elm => <p><span>{elm.item} : </span><span>{elm.price}</span></p>)
+
     return (
         <h3 style={{ textAlign: 'left', color: 'maroon' }}>
             {ch}
             <br />
+
+           <p>Example : <p>{outputElm}</p></p> 
 
         </h3>
     )
