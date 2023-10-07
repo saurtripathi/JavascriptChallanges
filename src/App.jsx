@@ -6,15 +6,27 @@ import data from '../data'
 
 function App() {
 
-  const calcAverageLikes = data => data.reduce((acc, curr) => acc + curr.likes, 0) / data.length
+  const awards = ["🏆", "⭐", "💎", "🥇", "👑"];
+  function getHosts(data) {
+    return data.reduce((acc, current) => [...acc, ...current.hosts], [])
+  }
 
-  console.log(calcAverageLikes(data))
+  function assignAwards(data) {
+    return getHosts(data).map(host => {
+      let random = Math.floor(Math.random() * awards.length)
+      return `${awards[random]} ${host}`
+    })
+  }
+
+
+  // console.log(getHosts(podcasts));
+  console.log(assignAwards(data));
 
   return (
     <>
       <Challange />
       <div >
-        <Solution calcAverageLikes={calcAverageLikes} data={data} />
+        <Solution assignAwards={assignAwards} data={data} />
       </div>
     </>
   )

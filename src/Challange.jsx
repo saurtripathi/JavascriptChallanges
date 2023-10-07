@@ -2,16 +2,19 @@ import React from 'react'
 
 export default function Challange() {
     const ch = `
-    Iggy the Influencer and Toby the Tiktoker are dying to know
-    who's more popular on social media. 
+    Night at the Scrimbies 
+
+    It's time for the Scrimbies, a prestigious award show for podcast hosts.
+    We need to assemble a list of podcast hosts so we can start handing out awards. 
     
-    Toby's TikToks get an average of 400 likes. On average, how many
-    likes do Iggy's Instagram posts get? 
+    Write a function that takes in the podcast data and
+    returns a flat array of podcast hosts. There are quite a few ways to approach
+    this, but try solving the problem using reduce(). 
     
-    In data.js you'll find a list of Iggy's recent posts. 
-    Use reduce() to write a function that returns the average number of likes.
-    To find the average, add up the total number of likes, then divide
-    by the total number of posts.
+    Once you have a flat array of hosts, write a second function to randomly assign each host a prize
+    from the awards array. 
+    
+    Example output: ["🏆 Alex Booker", "⭐ Bob Smith", "💎 Camilla Lambert" ...] 
 `
 
 
