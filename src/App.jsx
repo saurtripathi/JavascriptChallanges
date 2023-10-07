@@ -8,7 +8,8 @@ function App() {
 
   const awards = ["🏆", "⭐", "💎", "🥇", "👑"];
   function getHosts(data) {
-    return data.reduce((acc, current) => [...acc, ...current.hosts], [])
+    return data.reduce((acc, current) => acc.concat([...current.hosts]), [])
+    // return data.reduce((acc, current) => [...acc, ...current.hosts], [])
   }
 
   function assignAwards(data) {
