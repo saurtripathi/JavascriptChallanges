@@ -1,38 +1,23 @@
 import './App.css'
 import Challange from './Challange'
 import Solution from './Solution'
-import { keys } from 'underscore'
+import { keys, times } from 'underscore'
 import data from '../data'
 
 function App() {
-
-  // function getUniqueTags(data) {
-  //   const tags = data.reduce((acc, curr) => {
-  //     return [...acc, ...curr.tags]
-  //   }, [])
-  //   return [... new Set(tags)]
-  // }
-
-  function getUniqueTags(data) {
-
-    const uniqueTags = {}
-    const tags = data.map(curr => curr.tags).flat()
-    tags.forEach(tag => {
-      if (!uniqueTags[tag]) {
-        // uniqueTags= { ...uniqueTags, [tag]: true }
-        uniqueTags[tag]=true
-      }
-    })
-    return Object.keys(uniqueTags)
+  const flightLength = 60
+  function sortByDuration(data, flightLength) {
+    const copyOfData = data
+    return flightLength <= 60 ?
+      copyOfData.sort((a, b) => a.duration - b.duration).map(({ title, duration }, index) => `${index + 1}. ${title}, ${duration} minutes`) :
+      copyOfData.sort((a, b) => b.duration - a.duration).map(({ title, duration }, index) => `${index + 1}. ${title}, ${duration} minutes`)
   }
-
-  console.log(getUniqueTags(data))
 
   return (
     <>
       <Challange />
       <div >
-        <Solution getUniqueTags={getUniqueTags} data={data} />
+        <Solution sortByDuration={sortByDuration} data={data} flightLength={flightLength} />
       </div>
     </>
   )
