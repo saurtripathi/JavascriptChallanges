@@ -1,39 +1,27 @@
 export default [
     {
-        id: 1,
-        title: "Stranger Scrims",
-        duration: 40,
-        tags: ["supernatural", "horror", "drama"],
+        post: "A lot of you have asked about my morning skin care routine...",
+        likes: 348
     },
     {
-        id: 2,
-        title: "The Scrim of the Dragon",
-        duration: 60,
-        tags: ["drama", "fantasy"],
+        post: "New Year, new me. #blessed",
+        likes: 102
     },
     {
-        id: 3,
-        title: "Scrim Hunters",
-        duration: 22,
-        tags: ["reality", "home improvement"],
+        post: "Sunday by the pool 🌴 #vibes #mood #hotdoglegs",
+        likes: 544
     },
     {
-        id: 4,
-        title: "This Old Scrim",
-        duration: 30,
-        tags: ["reality", "home improvement"],
+        post: "Here are my top 5 #notsponsored unbiased dry shampoo recs...",
+        likes: 745
     },
     {
-        id: 5,
-        title: "What We Do in the Scrim",
-        duration: 55,
-        tags: ["drama", "comedy", "supernatural"],
+        post: "Last day in Hawaii! The tans will fade but the memories will last forever #holidays #foreverhawaii #blessed #followme",
+        likes: 412
     },
     {
-        id: 6,
-        title: "The Scrimdalorian",
-        duration: 58,
-        tags: ["fantasy", "sci-fi", "adventure"],
+        post: "Leg day #summerbody2022 #gymshark #beachworkout",
+        likes: 275
     },
-
 ]
+

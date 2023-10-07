@@ -5,19 +5,16 @@ import { keys, times } from 'underscore'
 import data from '../data'
 
 function App() {
-  const flightLength = 60
-  function sortByDuration(data, flightLength) {
-    const copyOfData = data
-    return flightLength <= 60 ?
-      copyOfData.sort((a, b) => a.duration - b.duration).map(({ title, duration }, index) => `${index + 1}. ${title}, ${duration} minutes`) :
-      copyOfData.sort((a, b) => b.duration - a.duration).map(({ title, duration }, index) => `${index + 1}. ${title}, ${duration} minutes`)
-  }
+
+  const calcAverageLikes = data => data.reduce((acc, curr) => acc + curr.likes, 0) / data.length
+
+  console.log(calcAverageLikes(data))
 
   return (
     <>
       <Challange />
       <div >
-        <Solution sortByDuration={sortByDuration} data={data} flightLength={flightLength} />
+        <Solution calcAverageLikes={calcAverageLikes} data={data} />
       </div>
     </>
   )
