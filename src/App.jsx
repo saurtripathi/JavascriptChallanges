@@ -6,28 +6,19 @@ import data from '../data'
 
 function App() {
 
-  const awards = ["🏆", "⭐", "💎", "🥇", "👑"];
-  function getHosts(data) {
-    return data.reduce((acc, current) => acc.concat([...current.hosts]), [])
-    // return data.reduce((acc, current) => [...acc, ...current.hosts], [])
-  }
-
-  function assignAwards(data) {
-    return getHosts(data).map(host => {
-      let random = Math.floor(Math.random() * awards.length)
-      return `${awards[random]} ${host}`
+  const description = "Scrimba Podcast is a 50 minute education podcast hosted by Alex Booker."
+  console.log(description.split('by')[1])
+  function createDescriptionsFor(data) {
+    return data.map(pod => {
+      return { ...pod, description: description.split('by')[0].concat(' by ').concat([pod.hosts]) }
     })
   }
-
-
-  // console.log(getHosts(podcasts));
-  console.log(assignAwards(data));
 
   return (
     <>
       <Challange />
       <div >
-        <Solution assignAwards={assignAwards} data={data} />
+        <Solution createDescriptionsFor={createDescriptionsFor} data={data} />
       </div>
     </>
   )
