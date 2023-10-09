@@ -2,24 +2,21 @@ import React from 'react'
 import { times } from 'underscore'
 
 
-export default function Solution({ data, createDescriptionsFor }) {
-    const mapElement = createDescriptionsFor(data).map(item =>
+export default function Solution({ anagram, anagrams, isAnagramInArray }) {
+
+    const mapElement = isAnagramInArray(anagram, anagrams).map(item =>
         <div>
-            <p>{item.id}</p>
-            <p>{item.title}</p>
-            <p>{item.duration}</p>
-            <p>{item.tags}</p>
-            <p>{item.hosts}</p>
-            <p>{item.genre}</p>
-            <p>{item.rating}</p>
-            <p>{item.paid}</p>
-            <p>{item.description}</p>
+            <p>{item}</p>
         </div>)
 
 
     return (
-        <h5>
-            {mapElement}
-        </h5>
+
+        <>
+        <h2>Solution : </h2>
+        {mapElement}
+        </>
+           
+        
     )
 }
